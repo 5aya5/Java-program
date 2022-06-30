@@ -1,0 +1,20 @@
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        System.out.println("One");
+        int value1 = scanner.nextInt();
+        System.out.println("Two");
+        int value2 = scanner.nextInt();
+        int sumOfTwoValues = sum(value1, value2);
+        System.out.println("Answer: " + sumOfTwoValues);
+
+    }
+    static int sum(int value1, int value2) {
+        int result = value1 + value2;
+        return result;
+
+    }
+}
