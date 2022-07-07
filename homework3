@@ -1,0 +1,91 @@
+
+
+        java.util.Scanner Scanner1 = new java.util.Scanner(System.in);
+
+        System.out.println("===============================================================");
+
+        System.out.println("Enter what you want to do: ");
+        System.out.println("To find out if you need to turn on the air conditioner enter: 1");
+        System.out.println("To turn on the calculator enter: 2");
+        System.out.println("Stopwatch: 3");
+
+        System.out.println("===============================================================");
+        int val1 = Scanner1.nextInt();
+
+        switch (val1) {
+
+            case 1:
+                System.out.println("===============================================================");
+
+                System.out.println("Enter temperature: ");
+                int val6 = Scanner1.nextInt();
+
+                if (val6 >= 25 ) {
+
+                    System.out.println("It's time to turn on the air conditioner, already " + val6 + " degrees.");
+
+                } else {
+
+                    System.out.println("Are you a fool turn off the air conditioner!");
+
+                }
+                
+                System.out.println("===============================================================");
+                break;
+            case 2:
+                System.out.println("===============================================================");
+
+                System.out.println("+(1) and -(2): ");
+                int val5 = Scanner1.nextInt();
+                if (val5 == 1) {
+                    System.out.println("One: ");
+                    int val2 = Scanner1.nextInt();
+
+                    System.out.println("Two: ");
+                    int val3 = Scanner1.nextInt();
+
+                    int val4 = (val2 + val3);
+                    System.out.println(val4);
+
+                } else if (val5 == 2) {
+                    System.out.println("One: ");
+                    int val2 = Scanner1.nextInt();
+
+                    System.out.println("Two: ");
+                    int val3 = Scanner1.nextInt();
+
+                    int val4 = (val2 - val3);
+                    System.out.println(val4);
+
+                }
+
+                System.out.println("===============================================================");
+                break;
+            case 3:
+                System.out.println("===============================================================");
+
+                System.out.println("How long to start the timer?: ");
+                int val7 = Scanner1.nextInt();
+                int x = 7200;
+                int y = 0;
+                // y != val7 || y == x
+                while (y != val7 || y == x) {
+                    y++;
+
+                    System.out.println("Time " + y + "!");
+                    Thread.sleep(300);
+
+                }
+                System.out.println("End of timer!!!");
+
+                System.out.println("===============================================================");
+                break;
+            default:
+                System.out.println("===============================================================");
+
+                System.out.println("Test???");
+
+                System.out.println("===============================================================");
+
+
+        }
