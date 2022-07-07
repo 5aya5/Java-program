@@ -7,7 +7,7 @@
         System.out.println("Enter what you want to do: ");
         System.out.println("To find out if you need to turn on the air conditioner enter: 1");
         System.out.println("To turn on the calculator enter: 2");
-        System.out.println("Stopwatch: 3");
+        System.out.println("Timer: 3");
 
         System.out.println("===============================================================");
         int val1 = Scanner1.nextInt();
