@@ -1,91 +1,78 @@
 
+import java.util.Scanner;
 
-        java.util.Scanner Scanner1 = new java.util.Scanner(System.in);
+public class Main {
+    public static void main(String[] args) throws Exception {
 
-        System.out.println("===============================================================");
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter what you want to do: ");
-        System.out.println("To find out if you need to turn on the air conditioner enter: 1");
-        System.out.println("To turn on the calculator enter: 2");
-        System.out.println("Timer: 3");
 
-        System.out.println("===============================================================");
-        int val1 = Scanner1.nextInt();
+        System.out.println("Введите то, что вы хотите сделать: " + "\n");
+        System.out.println("Чтобы узнать, нужно ли включать кондиционер, введите: 1");
+        System.out.println("Для включения калькулятора введите: 2");
+        System.out.println("Таймер: 3");
 
-        switch (val1) {
+        int startProgram = scanner.nextInt();
 
-            case 1:
-                System.out.println("===============================================================");
+        switch (startProgram) {
+            case 1 -> {
+                System.out.println("Введите температуру: ");
+                int temperature = scanner.nextInt();
+                if (temperature >= 25) {
 
-                System.out.println("Enter temperature: ");
-                int val6 = Scanner1.nextInt();
-
-                if (val6 >= 25 ) {
-
-                    System.out.println("It's time to turn on the air conditioner, already " + val6 + " degrees.");
+                    System.out.println("Пора включать кондиционер, уже " + temperature + "градусов.");
 
                 } else {
 
-                    System.out.println("Are you a fool turn off the air conditioner!");
+                    System.out.println("Выключите кондиционер! Сейчас слишком холодно.");
 
                 }
-                
-                System.out.println("===============================================================");
-                break;
-            case 2:
-                System.out.println("===============================================================");
+            }
+            case 2 -> {
+                System.out.println("Напишите (1) для сложения двух чисел: " + "\n" +
+                        "Напишите (2) для вычитания двух чисел:");
+                int calculator = scanner.nextInt();
+                if (calculator == 1) {
+                    System.out.println("Первое число для вычисления: ");
+                    int calculatorFirstNumber = scanner.nextInt();
 
-                System.out.println("+(1) and -(2): ");
-                int val5 = Scanner1.nextInt();
-                if (val5 == 1) {
-                    System.out.println("One: ");
-                    int val2 = Scanner1.nextInt();
+                    System.out.println("Второе число для вычисления: ");
+                    int calculatorSecondNumber = scanner.nextInt();
 
-                    System.out.println("Two: ");
-                    int val3 = Scanner1.nextInt();
+                    int calculatorSumNumbersAddition = (calculatorFirstNumber + calculatorSecondNumber);
+                    System.out.println(calculatorSumNumbersAddition);
 
-                    int val4 = (val2 + val3);
-                    System.out.println(val4);
+                } else if (calculator == 2) {
+                    System.out.println("Первое число для вычисления: ");
+                    int calculatorThirdNumber = scanner.nextInt();
 
-                } else if (val5 == 2) {
-                    System.out.println("One: ");
-                    int val2 = Scanner1.nextInt();
+                    System.out.println("Второе число для вычисления: ");
+                    int calculatorFourthNumber = scanner.nextInt();
 
-                    System.out.println("Two: ");
-                    int val3 = Scanner1.nextInt();
-
-                    int val4 = (val2 - val3);
-                    System.out.println(val4);
+                    int calculatorSumNumbersSubtraction = (calculatorThirdNumber - calculatorFourthNumber);
+                    System.out.println("Ваш ответ " + calculatorSumNumbersSubtraction + "!");
 
                 }
+            }
+            case 3 -> {
+                System.out.println("Как долго запускать таймер?: ");
+                int timerTime = scanner.nextInt();
+                int startTime = 0;
+                while (startTime != timerTime) {
+                    startTime++;
 
-                System.out.println("===============================================================");
-                break;
-            case 3:
-                System.out.println("===============================================================");
+                    System.out.println("Время " + startTime + "!");
 
-                System.out.println("How long to start the timer?: ");
-                int val7 = Scanner1.nextInt();
-                int x = 7200;
-                int y = 0;
-                // y != val7 || y == x
-                while (y != val7 || y == x) {
-                    y++;
-
-                    System.out.println("Time " + y + "!");
                     Thread.sleep(300);
 
+                    if (startTime == 7200) {
+                        break;
+                    }
+
                 }
-                System.out.println("End of timer!!!");
-
-                System.out.println("===============================================================");
-                break;
-            default:
-                System.out.println("===============================================================");
-
-                System.out.println("Test???");
-
-                System.out.println("===============================================================");
-
-
+                System.out.println("Конец времени!!!");
+            }
+            default -> System.out.println("Ошибка!!!");
         }
+    }
+}
