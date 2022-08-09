@@ -1,0 +1,19 @@
+package com.onlineReader;
+
+
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Book[] books = new Book[3];
+
+        books[0] = new Book("Гарри Поттер и философский камень", "Джоан Роулинг");
+        books[1] = new Book("Маленький принц","Антуан де Сент-Экзюпери");
+        books[2] = new Book("Властелин колец","Дж. Р. Р. Толкин");
+
+        System.out.println(Arrays.toString(books));
+
+
+    }
+}
