@@ -43,7 +43,7 @@ public class Main {
                     System.out.println(calculatorSumNumbersAddition);
 
                 } else if (calculator == 2) {
-                    System.out.println("Первое число для вычисления: ");
+                    System.out.println("Первое число для вычисления: "); 
                     int calculatorThirdNumber = scanner.nextInt();
 
                     System.out.println("Второе число для вычисления: ");
@@ -63,8 +63,8 @@ public class Main {
 
                     System.out.println("Время " + startTime + "!");
 
-                    Thread.sleep(300);
-
+                    Thread.sleep(1000);
+                    
                     if (startTime == 7200) {
                         break;
                     }
